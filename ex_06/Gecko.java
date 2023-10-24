@@ -39,11 +39,12 @@ public class Gecko {
     }
 
     public void setEnergy(int energy) {
-        if (energy >= 0 && energy <= 100) {
-            this.energy = energy;
+        if (energy < 0){
+            this.energy = 0;
+        } else if (energy > 100) {
+            this.energy = 100;
         } else {
-            System.out.println("Invalid energy value");
-        }
+            this.energy = energy;}
     }
 
     public void status() {
