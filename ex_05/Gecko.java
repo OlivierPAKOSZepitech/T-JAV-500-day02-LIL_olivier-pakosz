@@ -61,6 +61,16 @@ public class Gecko {
         }
     }
 
+    public void hello(String message) {
+    System.out.println("Hello " + message + ", I'm " + name + "!");
+    }
+
+    public void hello(int times) {
+        for (int i = 0; i < times; i++) {
+            System.out.println("Hello, I'm " + name + "!");
+        }
+    }
+    
     public void hello(Object arg) {
         if (arg instanceof String) {
             System.out.println("Hello " + arg + ", I'm " + name + "!");
