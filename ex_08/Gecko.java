@@ -114,6 +114,7 @@ public class Gecko {
             Gecko geckoFriend = (Gecko) friend;
             if (energy >= 30 && geckoFriend.getEnergy() >= 30) {
                 System.out.println("I'm going to drink with " + geckoFriend.getName() + "!");
+                System.out.println("I'm going to drink with " + name + "!");
                 setEnergy(energy - 30);
                 geckoFriend.setEnergy(geckoFriend.getEnergy() - 30);
             } else if (energy < 30 && geckoFriend.getEnergy() < 30) {
