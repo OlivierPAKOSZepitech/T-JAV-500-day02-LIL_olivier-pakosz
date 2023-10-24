@@ -23,11 +23,11 @@ public class Gecko {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public int getAge() {
-        return age;
+        return this.age;
     }
 
     public void setAge(int age) {
@@ -35,8 +35,20 @@ public class Gecko {
     }
 
     public int getEnergy() {
-        return energy;
+        return this.energy;
     }
+
+    public void work(){
+        if(this.energy >= 25){
+            setEnergy(this.energy - 9);
+            System.out.println("I'm working T.T"); 
+        }
+        else {setEnergy(this.energy + 50);
+        System.out.println("Heyyy I'm too sleepy, better take a nap!");
+        }
+    }
+
+    
 
     public void setEnergy(int energy) {
         if (energy < 0){
