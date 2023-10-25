@@ -109,29 +109,30 @@ public class Gecko {
         }
     }
 
-    public void fraternize(Object friend) {
+public void fraternize(Object friend) {
         if (friend instanceof Gecko) {
-            Gecko geckoFriend = (Gecko) friend;
-            if (energy >= 30 && geckoFriend.getEnergy() >= 30) {
-                System.out.println("I'm going to drink with " + geckoFriend.getName() + "!");
-                System.out.println("I'm going to drink with " + name + "!");
-                setEnergy(energy - 30);
-                geckoFriend.setEnergy(geckoFriend.getEnergy() - 30);
-            } else if (energy < 30 && geckoFriend.getEnergy() < 30) {
-                System.out.println("Not today!");
-            } else if (energy < 30) {
-                System.out.println("Sorry " + geckoFriend.getName() + ", I'm too tired to go out tonight.");
+            Gecko friendGecko = (Gecko) friend;
+            if (this.energy >= 30 && friendGecko.getEnergy() >= 30) {
+                this.setEnergy(this.energy - 30);
+                friendGecko.setEnergy(friendGecko.getEnergy() - 30);
+                System.out.println("I'm going to drink with " + friendGecko.getName() + "!");
+                System.out.println("I'm going to drink with " + this.name + "!");
+            } else if (!(this.energy >= 30) && friendGecko.getEnergy() >= 30) {
+                System.out.println("Sorry " + friendGecko.getName() + ", I'm too tired to go out tonight.");
+                System.out.println("Oh! That's too bad, another time then!");
+            } else if (this.energy >= 30 && !(friendGecko.getEnergy() >= 30)) {
+                System.out.println("Sorry " + this.name + ", I'm too tired to go out tonight.");
                 System.out.println("Oh! That's too bad, another time then!");
             } else {
-                System.out.println("Sorry " + geckoFriend.getName() + ", I'm too tired to go out tonight.");
-                geckoFriend.setEnergy(geckoFriend.getEnergy() - 30);
-                System.out.println("Oh! That's too bad, another time then!");
+                System.out.println("Not today!");
+                System.out.println("Not today!");
             }
         } else if (friend instanceof Snake) {
-            if (energy >= 10) {
+            if (this.energy >= 10) {
                 System.out.println("LET'S RUN AWAY!!!");
-                setEnergy(0);
-            } else {
+                this.setEnergy(0);
+            }
+            else {
                 System.out.println("...");
             }
         }
